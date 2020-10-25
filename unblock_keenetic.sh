@@ -2,7 +2,7 @@
 
 if [ "$1" == "remove" ]
 then
-  opkg remove mc tor tor-geoip bind-dig cron dnsmasq-full ipset iptables dnscrypt-proxy2
+  opkg remove tor tor-geoip bind-dig cron dnsmasq-full ipset iptables dnscrypt-proxy2
   rm -rf /opt/etc/ndm/fs.d/100-ipset.sh
   rm -rf /opt/etc/tor/torrc
   rm -rf /opt/etc/unblock.txt

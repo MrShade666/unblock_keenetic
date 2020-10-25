@@ -116,7 +116,7 @@ sed -i "s/192.168.1.1/${lanip}/g" /opt/etc/dnsmasq.conf
 rm -rf /opt/etc/crontab
 wget --no-check-certificate -O /opt/etc/crontab https://raw.githubusercontent.com/Tindal/unblock_keenetic/master/crontab
 
-iptables -t nat -A PREROUTING -i ИНТЕРФЕЙС -p tcp -m set --match-set unblock dst -j REDIRECT --to-port 9141
+iptables -t nat -A PREROUTING -i l2tp0 -p tcp -m set --match-set unblock dst -j REDIRECT --to-port 9141
 
 ndmq -p 'opkg dns-override'
 ndmq -p 'system configuration save'

@@ -2,7 +2,7 @@ User root
 PidFile /opt/var/run/tor.pid
 ExcludeExitNodes {RU},{UA},{AM},{KG},{BY}
 StrictNodes 1
-TransPort 192.168.1.1:9141
+TransPort 0.0.0.0:9141
 ExitRelay 0
 ExitPolicy reject *:*
 ExitPolicy reject6 *:*

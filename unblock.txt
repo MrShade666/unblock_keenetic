@@ -16,6 +16,7 @@ tparser.org
 rustorka.com
 uniongang.tv
 fast-torrent.ru
+lostfilm.tv
 
 ###Каталоги медиаконтента для программ
 rezka.ag

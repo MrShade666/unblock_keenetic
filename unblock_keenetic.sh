@@ -18,6 +18,7 @@ then
   
   ndmq -p 'no opkg dns-override'
   ndmq -p 'system configuration save'
+  wget -qO - --post-data='[{"system": {"configuration": {"save": true}}}]' localhost:79/rci/
   wget -qO - --post-data='[{"system":{"reboot":true}}]' localhost:79/rci > /dev/null 2>&1
   
   sleep 5
@@ -119,7 +120,7 @@ wget --no-check-certificate -O /opt/etc/crontab https://raw.githubusercontent.co
 iptables -t nat -A PREROUTING -i l2tp0 -p tcp -m set --match-set unblock dst -j REDIRECT --to-port 9141
 
 ndmq -p 'opkg dns-override'
-ndmq -p 'system configuration save'
+wget -qO - --post-data='[{"system": {"configuration": {"save": true}}}]' localhost:79/rci/
 wget -qO - --post-data='[{"system":{"reboot":true}}]' localhost:79/rci > /dev/null 2>&1
 
 sleep 5

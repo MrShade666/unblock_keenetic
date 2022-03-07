@@ -18,7 +18,7 @@ then
   
   ndmq -p 'no opkg dns-override'
   ndmq -p 'system configuration save'
-  ndmq -p 'system reboot'
+  wget -qO - --post-data='[{"system":{"reboot":true}}]' localhost:79/rci > /dev/null 2>&1
   
   sleep 5
   
@@ -120,7 +120,7 @@ iptables -t nat -A PREROUTING -i l2tp0 -p tcp -m set --match-set unblock dst -j 
 
 ndmq -p 'opkg dns-override'
 ndmq -p 'system configuration save'
-ndmq -p 'system reboot'
+wget -qO - --post-data='[{"system":{"reboot":true}}]' localhost:79/rci > /dev/null 2>&1
 
 sleep 5
 

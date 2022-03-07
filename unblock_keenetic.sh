@@ -17,6 +17,7 @@ then
   rm -rf /opt/etc/dnscrypt-proxy.toml
   
   ndmq -p 'no opkg dns-override'
+  wget -qO - --post-data='[{"no":true,"opkg":{"dns-override"}}]' localhost:79/rci/
   wget -qO - --post-data='[{"system":{"configuration":{"save":true}}}]' localhost:79/rci/
   wget -qO - --post-data='[{"system":{"reboot":true}}]' localhost:79/rci > /dev/null 2>&1
   
